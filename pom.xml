@@ -129,9 +129,12 @@
                                 <password>root</password>
                             </jdbc>
                             <generator>
-                                <generate>
-                                    <pojos>true</pojos>
-                                </generate>
+                                <!--<generate>-->
+                                    <!--<pojos>true</pojos>-->
+                                <!--</generate>-->
+                                <strategy>
+                                    <name>com.github.uuidcode.jooq.test.strategy.CustomGeneratorStrategy</name>
+                                </strategy>
                                 <database>
                                     <name>org.jooq.meta.mysql.MySQLDatabase</name>
                                     <includes>.*</includes>

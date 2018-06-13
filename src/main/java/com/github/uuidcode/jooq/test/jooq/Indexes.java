@@ -4,8 +4,8 @@
 package com.github.uuidcode.jooq.test.jooq;
 
 
-import com.github.uuidcode.jooq.test.jooq.tables.Book;
-import com.github.uuidcode.jooq.test.jooq.tables.User;
+import com.github.uuidcode.jooq.test.jooq.tables.QBook;
+import com.github.uuidcode.jooq.test.jooq.tables.QUser;
 
 import javax.annotation.Generated;
 
@@ -39,7 +39,7 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     private static class Indexes0 {
-        public static Index BOOK_PRIMARY = Internal.createIndex("PRIMARY", Book.BOOK, new OrderField[] { Book.BOOK.BOOK_ID }, true);
-        public static Index USER_PRIMARY = Internal.createIndex("PRIMARY", User.USER, new OrderField[] { User.USER.USER_ID }, true);
+        public static Index BOOK_PRIMARY = Internal.createIndex("PRIMARY", QBook.BOOK, new OrderField[] { QBook.BOOK.BOOK_ID }, true);
+        public static Index USER_PRIMARY = Internal.createIndex("PRIMARY", QUser.USER, new OrderField[] { QUser.USER.USER_ID }, true);
     }
 }

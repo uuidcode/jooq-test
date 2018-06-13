@@ -4,10 +4,10 @@
 package com.github.uuidcode.jooq.test.jooq;
 
 
-import com.github.uuidcode.jooq.test.jooq.tables.Book;
-import com.github.uuidcode.jooq.test.jooq.tables.User;
-import com.github.uuidcode.jooq.test.jooq.tables.records.BookRecord;
-import com.github.uuidcode.jooq.test.jooq.tables.records.UserRecord;
+import com.github.uuidcode.jooq.test.jooq.tables.QBook;
+import com.github.uuidcode.jooq.test.jooq.tables.QUser;
+import com.github.uuidcode.jooq.test.jooq.tables.records.QBookRecord;
+import com.github.uuidcode.jooq.test.jooq.tables.records.QUserRecord;
 
 import javax.annotation.Generated;
 
@@ -34,15 +34,15 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
-    public static final Identity<BookRecord, Long> IDENTITY_BOOK = Identities0.IDENTITY_BOOK;
-    public static final Identity<UserRecord, Long> IDENTITY_USER = Identities0.IDENTITY_USER;
+    public static final Identity<QBookRecord, Long> IDENTITY_BOOK = Identities0.IDENTITY_BOOK;
+    public static final Identity<QUserRecord, Long> IDENTITY_USER = Identities0.IDENTITY_USER;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<BookRecord> KEY_BOOK_PRIMARY = UniqueKeys0.KEY_BOOK_PRIMARY;
-    public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = UniqueKeys0.KEY_USER_PRIMARY;
+    public static final UniqueKey<QBookRecord> KEY_BOOK_PRIMARY = UniqueKeys0.KEY_BOOK_PRIMARY;
+    public static final UniqueKey<QUserRecord> KEY_USER_PRIMARY = UniqueKeys0.KEY_USER_PRIMARY;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -54,12 +54,12 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     private static class Identities0 {
-        public static Identity<BookRecord, Long> IDENTITY_BOOK = Internal.createIdentity(Book.BOOK, Book.BOOK.BOOK_ID);
-        public static Identity<UserRecord, Long> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.USER_ID);
+        public static Identity<QBookRecord, Long> IDENTITY_BOOK = Internal.createIdentity(QBook.BOOK, QBook.BOOK.BOOK_ID);
+        public static Identity<QUserRecord, Long> IDENTITY_USER = Internal.createIdentity(QUser.USER, QUser.USER.USER_ID);
     }
 
     private static class UniqueKeys0 {
-        public static final UniqueKey<BookRecord> KEY_BOOK_PRIMARY = Internal.createUniqueKey(Book.BOOK, "KEY_book_PRIMARY", Book.BOOK.BOOK_ID);
-        public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, "KEY_user_PRIMARY", User.USER.USER_ID);
+        public static final UniqueKey<QBookRecord> KEY_BOOK_PRIMARY = Internal.createUniqueKey(QBook.BOOK, "KEY_book_PRIMARY", QBook.BOOK.BOOK_ID);
+        public static final UniqueKey<QUserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(QUser.USER, "KEY_user_PRIMARY", QUser.USER.USER_ID);
     }
 }

@@ -4,8 +4,8 @@
 package com.github.uuidcode.jooq.test.jooq;
 
 
-import com.github.uuidcode.jooq.test.jooq.tables.Book;
-import com.github.uuidcode.jooq.test.jooq.tables.User;
+import com.github.uuidcode.jooq.test.jooq.tables.QBook;
+import com.github.uuidcode.jooq.test.jooq.tables.QUser;
 
 import javax.annotation.Generated;
 
@@ -26,10 +26,10 @@ public class Tables {
     /**
      * The table <code>jooq.book</code>.
      */
-    public static final Book BOOK = com.github.uuidcode.jooq.test.jooq.tables.Book.BOOK;
+    public static final QBook BOOK = com.github.uuidcode.jooq.test.jooq.tables.QBook.BOOK;
 
     /**
      * The table <code>jooq.user</code>.
      */
-    public static final User USER = com.github.uuidcode.jooq.test.jooq.tables.User.USER;
+    public static final QUser USER = com.github.uuidcode.jooq.test.jooq.tables.QUser.USER;
 }

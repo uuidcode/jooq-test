@@ -3,14 +3,13 @@ package com.github.uuidcode.jooq.test;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import org.jooq.Record;
 import org.jooq.impl.DSL;
 import org.jooq.impl.DefaultDSLContext;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.github.uuidcode.jooq.test.jooq.tables.User;
-import com.github.uuidcode.jooq.test.jooq.tables.records.UserRecord;
+import com.github.uuidcode.jooq.test.entity.User;
+import com.github.uuidcode.jooq.test.jooq.tables.QUser;
 import com.github.uuidcode.jooq.test.util.CoreUtil;
 
 public class JooqTest extends CoreTest {
@@ -19,7 +18,7 @@ public class JooqTest extends CoreTest {
 
     @Test
     public void insert() {
-        int row = this.dsl.insertInto(User.USER, User.USER.NAME, User.USER.REG_DATETIME)
+        int row = this.dsl.insertInto(QUser.USER, QUser.USER.NAME, QUser.USER.REG_DATETIME)
             .values(CoreUtil.createUUID(), new Timestamp(new Date().getTime()))
             .execute();
 
@@ -28,21 +27,29 @@ public class JooqTest extends CoreTest {
     
     @Test
     public void insertSet() {
-        int row = this.dsl.insertInto(User.USER)
-            .set(User.USER.NAME, CoreUtil.createUUID())
-            .set(User.USER.REG_DATETIME, DSL.currentTimestamp())
+        int row = this.dsl.insertInto(QUser.USER)
+            .set(QUser.USER.NAME, CoreUtil.createUUID())
+            .set(QUser.USER.REG_DATETIME, DSL.currentTimestamp())
             .execute();
 
         this.printJson(row);
     }
 
     @Test
-    public void insertReturn() {
-        UserRecord userRecord = this.dsl.selectFrom(User.USER)
-            .where(User.USER.USER_ID.eq(1L))
-            .fetchOne();
+    public void update() {
+        this.dsl.update(QUser.USER)
+            .set(QUser.USER.REG_DATETIME, DSL.currentTimestamp())
+            .where(QUser.USER.USER_ID.eq(1L))
+            .execute();
+    }
 
-        this.printJson(userRecord);
+    @Test
+    public void select() {
+        User user = this.dsl.selectFrom(QUser.USER)
+            .where(QUser.USER.USER_ID.eq(1L))
+            .fetchOne()
+            .into(User.class);
 
+        this.printJson(user);
     }
 }
