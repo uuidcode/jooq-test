@@ -4,6 +4,11 @@
 package com.github.uuidcode.jooq.test.jooq.tables;
 
 
+import com.github.uuidcode.jooq.test.jooq.Indexes;
+import com.github.uuidcode.jooq.test.jooq.Keys;
+import com.github.uuidcode.jooq.test.jooq.QJooq;
+import com.github.uuidcode.jooq.test.jooq.tables.records.QBookRecord;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,11 +24,6 @@ import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
 import org.jooq.impl.TableImpl;
-
-import com.github.uuidcode.jooq.test.jooq.Indexes;
-import com.github.uuidcode.jooq.test.jooq.Keys;
-import com.github.uuidcode.jooq.test.jooq.QJooq;
-import com.github.uuidcode.jooq.test.jooq.tables.records.QBookRecord;
 
 
 /**

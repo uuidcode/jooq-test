@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 public class User {
+    @Id
     private Long userId;
     private String name;
     private Date regDatetime;
@@ -34,6 +35,7 @@ public class User {
         this.name = name;
         return this;
     }
+
     public Long getUserId() {
         return this.userId;
     }
