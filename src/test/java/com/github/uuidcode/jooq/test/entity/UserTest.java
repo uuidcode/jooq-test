@@ -1,4 +1,4 @@
-package com.github.uuidcode.jooq.test;
+package com.github.uuidcode.jooq.test.entity;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -8,12 +8,12 @@ import org.jooq.impl.DefaultDSLContext;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.github.uuidcode.jooq.test.entity.User;
+import com.github.uuidcode.jooq.test.CoreTest;
 import com.github.uuidcode.jooq.test.util.CoreUtil;
 
 import static com.github.uuidcode.jooq.test.jooq.tables.QUser.USER;
 
-public class JooqTest extends CoreTest {
+public class UserTest extends CoreTest {
     @Autowired
     private DefaultDSLContext dsl;
 

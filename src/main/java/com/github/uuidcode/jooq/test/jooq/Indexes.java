@@ -31,6 +31,7 @@ public class Indexes {
     // INDEX definitions
     // -------------------------------------------------------------------------
 
+    public static final Index BOOK_BOOK_IDX1 = Indexes0.BOOK_BOOK_IDX1;
     public static final Index BOOK_PRIMARY = Indexes0.BOOK_PRIMARY;
     public static final Index USER_PRIMARY = Indexes0.USER_PRIMARY;
 
@@ -39,6 +40,7 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     private static class Indexes0 {
+        public static Index BOOK_BOOK_IDX1 = Internal.createIndex("book_idx1", QBook.BOOK, new OrderField[] { QBook.BOOK.USER_ID }, false);
         public static Index BOOK_PRIMARY = Internal.createIndex("PRIMARY", QBook.BOOK, new OrderField[] { QBook.BOOK.BOOK_ID }, true);
         public static Index USER_PRIMARY = Internal.createIndex("PRIMARY", QUser.USER, new OrderField[] { QUser.USER.USER_ID }, true);
     }

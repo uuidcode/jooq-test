@@ -1,11 +1,22 @@
 package com.github.uuidcode.jooq.test.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private Long userId;
     private String name;
     private Date regDatetime;
+    private List<Book> bookList;
+
+    public List<Book> getBookList() {
+        return this.bookList;
+    }
+
+    public User setBookList(List<Book> bookList) {
+        this.bookList = bookList;
+        return this;
+    }
 
     public Date getRegDatetime() {
         return this.regDatetime;

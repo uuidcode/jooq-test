@@ -126,7 +126,7 @@
                                 <driver>com.mysql.jdbc.Driver</driver>
                                 <url>jdbc:mysql://127.0.0.1:3306/jooq</url>
                                 <user>root</user>
-                                <password>root</password>
+                                <password>rootroot</password>
                             </jdbc>
                             <generator>
                                 <!--<generate>-->
