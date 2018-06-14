@@ -3,6 +3,8 @@ package com.github.uuidcode.jooq.test.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.github.uuidcode.jooq.test.annotation.Id;
+
 public class User {
     @Id
     private Long userId;
