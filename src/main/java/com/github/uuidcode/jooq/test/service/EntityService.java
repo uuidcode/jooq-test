@@ -48,9 +48,7 @@ public class EntityService<CHILD> {
             .getGenericSuperclass()).getActualTypeArguments()[0];
         String idName = this.getIdName(parentClass);
         Method parentIdMethod = this.getIdMethod(parentClass, idName);
-        parentIdMethod.setAccessible(true);
         Method childIdMethod = this.getIdMethod(childClass, idName);
-        childIdMethod.setAccessible(true);
 
         List<Long> idList = list.stream()
             .map(this.createIdFunction(parentIdMethod))
@@ -69,7 +67,6 @@ public class EntityService<CHILD> {
         }
 
         String childQClassName = "com.github.uuidcode.jooq.test.jooq.tables.Q" + childSimpleName;
-
         Table table;
         TableField idTableField;
 
@@ -84,7 +81,6 @@ public class EntityService<CHILD> {
         } catch (Throwable t) {
             throw new RuntimeException(t);
         }
-
 
         List<CHILD> childAllList = this.dsl.selectFrom(table)
             .where(idTableField.in(idList))
@@ -122,7 +118,6 @@ public class EntityService<CHILD> {
             } catch (Throwable t) {
                 throw new RuntimeException(t);
             }
-
         });
     }
 
