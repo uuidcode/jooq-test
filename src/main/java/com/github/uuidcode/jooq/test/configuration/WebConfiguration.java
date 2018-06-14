@@ -28,7 +28,7 @@ public class WebConfiguration {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/jooq");
         dataSource.setUsername("root");
-        dataSource.setPassword("root");
+        dataSource.setPassword("rootroot");
         dataSource.setDriverClassName(Driver.class.getName());
         return dataSource;
     }
